@@ -14,9 +14,11 @@ def minimum_cost_to_connect_cables(cables):
         # cost for 2 cables
         combined_cables = cable1 + cable2
         total_cost += combined_cables
+        # add result to heap
+        heapq.heappush(cables, combined_cables)
     return total_cost
 
 # example of use
-cables =[4,3,7.6]
+cables =[1,2,3,4]
 min_cost = minimum_cost_to_connect_cables(cables)
 print("Minimum cost of connected cables is:", min_cost)
